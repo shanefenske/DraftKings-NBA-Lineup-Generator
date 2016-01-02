@@ -8,7 +8,8 @@ scrape.py:  Not to be called by user. Walks from DraftKing’s NBA lobby into a 
 
 optimize.py:  Not to be called by user.  Uses scrape.py generated csv to print best lineup. First creates list of all players playing that night, the list is sorted by a value column which is equal to the player’s projection / (their salary / 1000).  Then determines best lineup by populating the guard, forward, and utility positions with the first 3 players in the sorted playerlist who can legally fill the 3 positions. To fill the 5 remaining positions (PG,SG,SF,PF,C), the program brute force tries every legal combination.  It then prints the best lineup, unless that lineup is projected to score less than 270 points (270 is the safety threshold point I determined where larger scores could usually win DraftKings 50-50 contests). Optimize.py can alternatively just print the best value players at a specified position as explained below.
 
-generate.py: Main function to be called by user. Calls the other two programs dependent on what arguments it is passed. Called in this way:
+generate.py: Main function to be called by user. Calls the other two programs dependent on what arguments it is passed. Called in the following ways from shell:
+
 % python generate.py
 calls scrape.py (which can take up to 10 minutes) and then optimize.py. Prints optimal lineup.
 
