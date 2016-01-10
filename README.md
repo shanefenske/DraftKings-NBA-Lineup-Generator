@@ -2,7 +2,7 @@
 
 % python generate.py  player_data1.csv
 
-Usage of programs is provided here. See writeup.pdf for a full explanation of project. 
+Usage of programs is provided here.
 
 scrape.py:  Not to be called by user. Walks from DraftKing’s NBA lobby into a contest and downloads that day’s lineup of available players and their salaries into player_data.csv. It then searches for every player in this csv on basketball-reference.com, enters their individual page, and writes to player_data.csv  the data it finds on their previous 4 games. Each player’s fantasy projection is written as the average of their last two games in the column ‘last two.’ If they scored more in the two games prior to their most recent two then they are removed from player_data.csv  as we do not want players with negative momentum.
 
